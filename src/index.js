@@ -152,3 +152,15 @@ async function fetchToken(wwwAuthenticate, scope, authorization) {
   }
   return await fetch(url, { method: "GET", headers: headers });
 }
+
+import ABOUT from './about.html'
+ 
+// return docs
+if (url.pathname === "/") {
+  return new Response(ABOUT, {
+    status: 200,
+    headers: {
+      "content-type": "text/html"
+    }
+  });
+}
